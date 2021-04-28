@@ -1,8 +1,34 @@
-var arrGiocatori = [];
-var lunghezza = 3;
+var arrGiocatori = [
+    {
+        firstname: 'Giovanni'
+    },
+    {
+        firstname: 'Marco'
+    },
+    {
+        firstname: 'Gianluca'
+    },
+    {
+        firstname: 'Antonio'
+    },
+    {
+        firstname: 'Pasquale'
+    }
+];
+
+for(var giocatore of arrGiocatori){
+    var lunghezza = 3;
+    giocatore.code = codiceGiocatore(lunghezza);
+    giocatore.media = RandomNumber(0,50);
+    giocatore.percentuale = RandomNumber(0,100);
+    
+}
+console.log(arrGiocatori);
+
+
 /* funzione che mi crea il codice di tre lettere e tre numeri */
 
-codiceGiocatore(lunghezza)
+
 function codiceGiocatore(length){
     var lettere = 'ABCDEFGHILMNOPQRSTUVZWYJKX';
     var numeri = '1234567890';
@@ -22,6 +48,14 @@ function codiceGiocatore(length){
 
     return codice;  
 }
+
+
+function RandomNumber(min, max){
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+
+
 
 
 
